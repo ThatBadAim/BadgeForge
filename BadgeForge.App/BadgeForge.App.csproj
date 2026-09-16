@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Shown in the exe's Properties > Details tab on Windows -->
+    <Product>BadgeForge</Product>
+    <AssemblyTitle>BadgeForge Card Designer and Batch Printer</AssemblyTitle>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <!--
+    Portable Windows build. Everything the app needs — the .NET runtime, Avalonia, SkiaSharp's native libraries —
+    is packed into one BadgeForge.App.exe, so the printer PC needs no .NET install, no internet access and no
+    installer: copy the exe across and run it. Publish with publish-windows.sh (Linux) or publish-windows.cmd
+    (Windows); these settings only apply when a Windows runtime identifier is given, so `dotnet build` and the
+    test suite are untouched.
+  -->
+  <PropertyGroup Condition="$(RuntimeIdentifier.StartsWith('win'))">
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <!-- Without this, libSkiaSharp.dll and friends sit loose next to the exe and it stops being one file -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <!-- Precompiled so the first window doesn't wait on the JIT. Drop it if the exe ever misbehaves. -->
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <!-- Avalonia resolves controls and bindings by reflection, which the trimmer can't see through -->
+    <PublishTrimmed>false</PublishTrimmed>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- Symbols travel inside the assemblies, so a crash on the printer PC still reports real line numbers -->
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <!--
+    SkiaSharp and HarfBuzz ship ~120MB of native symbol files that would otherwise be copied beside the exe and
+    quadruple what has to be carried to the printer. Nothing needs them at runtime.
+  -->
+  <Target Name="StripNativeSymbolsFromPublish" AfterTargets="ComputeResolvedFilesToPublishList">
+    <ItemGroup>
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="'%(Extension)' == '.pdb'" />
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.1.2" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.2" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.2" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="12.1.2" />
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.3">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="SkiaSharp" Version="4.152.0" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="4.152.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The renderer's bundled fonts, so the in-place text editor draws with exactly the font the badge prints in -->
+    <AvaloniaResource Include="..\BadgeForge.Core.Rendering\Assets\Fonts\*.ttf" Link="Assets\Fonts\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BadgeForge.Core.Printing\BadgeForge.Core.Printing.csproj" />
+    <ProjectReference Include="..\BadgeForge.Core.Templates\BadgeForge.Core.Templates.csproj" />
+    <ProjectReference Include="..\BadgeForge.Core.Rendering\BadgeForge.Core.Rendering.csproj" />
+    <ProjectReference Include="..\BadgeForge.Core.Data\BadgeForge.Core.Data.csproj" />
+  </ItemGroup>
+</Project>

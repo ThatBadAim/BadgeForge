@@ -1,0 +1,528 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BadgeForge.App.App"
+             RequestedThemeVariant="Light">
+    <!-- Light is forced: the panels are designed for a light base, and following a dark
+         system theme renders white-on-white controls. -->
+
+    <Application.Resources>
+        <!-- BadgeForge accent palette (BadgeForge-Project.md) — accents only -->
+        <Color x:Key="ColorPrimaryGreyOlive">#7A918D</Color>
+        <Color x:Key="ColorPrimaryHover">#687E7A</Color>
+        <Color x:Key="ColorPrimaryPressed">#586C68</Color>
+        <Color x:Key="ColorSecondaryMutedTeal">#93B1A7</Color>
+        <Color x:Key="ColorSecondaryHoverMutedTeal">#99C2A2</Color>
+        <Color x:Key="ColorSuccessTeaGreen">#C5EDAC</Color>
+        <Color x:Key="ColorSubtleHighlightTeaGreen">#DBFEB8</Color>
+
+        <!-- Neutral base -->
+        <Color x:Key="ColorNeutralBase">#F4F5F4</Color>
+        <Color x:Key="ColorCanvasBackdrop">#ECEEEC</Color>
+        <Color x:Key="ColorSurface">#FFFFFF</Color>
+        <Color x:Key="ColorHover">#F1F3F2</Color>
+        <Color x:Key="ColorSelected">#E6EEEB</Color>
+        <Color x:Key="ColorBorder">#E3E6E4</Color>
+        <Color x:Key="ColorBorderStrong">#CFD5D3</Color>
+        <Color x:Key="ColorTextPrimary">#1D2624</Color>
+        <Color x:Key="ColorTextSecondary">#56625F</Color>
+        <Color x:Key="ColorTextMuted">#86908D</Color>
+        <Color x:Key="ColorDanger">#B42318</Color>
+
+        <SolidColorBrush x:Key="BrushPrimary" Color="{StaticResource ColorPrimaryGreyOlive}" />
+        <SolidColorBrush x:Key="BrushPrimaryHover" Color="{StaticResource ColorPrimaryHover}" />
+        <SolidColorBrush x:Key="BrushPrimaryPressed" Color="{StaticResource ColorPrimaryPressed}" />
+        <SolidColorBrush x:Key="BrushSecondary" Color="{StaticResource ColorSecondaryMutedTeal}" />
+        <SolidColorBrush x:Key="BrushSecondaryHover" Color="{StaticResource ColorSecondaryHoverMutedTeal}" />
+        <SolidColorBrush x:Key="BrushSuccess" Color="{StaticResource ColorSuccessTeaGreen}" />
+        <SolidColorBrush x:Key="BrushSubtleHighlight" Color="{StaticResource ColorSubtleHighlightTeaGreen}" />
+        <SolidColorBrush x:Key="BrushNeutralBase" Color="{StaticResource ColorNeutralBase}" />
+        <SolidColorBrush x:Key="BrushCanvasBackdrop" Color="{StaticResource ColorCanvasBackdrop}" />
+        <SolidColorBrush x:Key="BrushSurface" Color="{StaticResource ColorSurface}" />
+        <SolidColorBrush x:Key="BrushHover" Color="{StaticResource ColorHover}" />
+        <SolidColorBrush x:Key="BrushSelected" Color="{StaticResource ColorSelected}" />
+        <SolidColorBrush x:Key="BrushBorder" Color="{StaticResource ColorBorder}" />
+        <SolidColorBrush x:Key="BrushBorderStrong" Color="{StaticResource ColorBorderStrong}" />
+        <SolidColorBrush x:Key="BrushTextPrimary" Color="{StaticResource ColorTextPrimary}" />
+        <SolidColorBrush x:Key="BrushTextSecondary" Color="{StaticResource ColorTextSecondary}" />
+        <SolidColorBrush x:Key="BrushTextMuted" Color="{StaticResource ColorTextMuted}" />
+        <SolidColorBrush x:Key="BrushDanger" Color="{StaticResource ColorDanger}" />
+
+        <!-- Fluent theme overrides so built-in controls pick up the palette -->
+        <Color x:Key="SystemAccentColor">#7A918D</Color>
+        <Color x:Key="SystemAccentColorDark1">#687E7A</Color>
+        <Color x:Key="SystemAccentColorDark2">#586C68</Color>
+        <Color x:Key="SystemAccentColorDark3">#485A57</Color>
+        <Color x:Key="SystemAccentColorLight1">#93B1A7</Color>
+        <Color x:Key="SystemAccentColorLight2">#B4CBC3</Color>
+        <Color x:Key="SystemAccentColorLight3">#D6E3DE</Color>
+        <CornerRadius x:Key="ControlCornerRadius">6</CornerRadius>
+        <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
+        <x:Double x:Key="TabItemHeaderFontSize">13</x:Double>
+        <SolidColorBrush x:Key="TextControlBackground" Color="{StaticResource ColorSurface}" />
+        <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="{StaticResource ColorSurface}" />
+        <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="{StaticResource ColorSurface}" />
+        <SolidColorBrush x:Key="TextControlBorderBrush" Color="{StaticResource ColorBorderStrong}" />
+        <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="#B3BDBA" />
+        <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="{StaticResource ColorPrimaryGreyOlive}" />
+        <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource ColorTextPrimary}" />
+        <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="{StaticResource ColorTextMuted}" />
+        <SolidColorBrush x:Key="ComboBoxBackground" Color="{StaticResource ColorSurface}" />
+        <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="{StaticResource ColorHover}" />
+        <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{StaticResource ColorBorderStrong}" />
+        <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="#B3BDBA" />
+        <SolidColorBrush x:Key="TabItemHeaderForegroundUnselected" Color="{StaticResource ColorTextSecondary}" />
+        <SolidColorBrush x:Key="TabItemHeaderForegroundUnselectedPointerOver" Color="{StaticResource ColorTextPrimary}" />
+        <SolidColorBrush x:Key="TabItemHeaderForegroundSelected" Color="{StaticResource ColorTextPrimary}" />
+        <SolidColorBrush x:Key="TabItemHeaderForegroundSelectedPointerOver" Color="{StaticResource ColorTextPrimary}" />
+
+        <!-- 16×16 icon geometries -->
+        <StreamGeometry x:Key="IconPlus">M7.25 2h1.5v5.25H14v1.5H8.75V14h-1.5V8.75H2v-1.5h5.25z</StreamGeometry>
+        <StreamGeometry x:Key="IconMinus">M2 7.25h12v1.5H2z</StreamGeometry>
+        <StreamGeometry x:Key="IconCopy">M5 1h8a2 2 0 0 1 2 2v8h-1.5V3a.5.5 0 0 0-.5-.5H5zM2 4h8a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm.5 1.5v8h7v-8z</StreamGeometry>
+        <StreamGeometry x:Key="IconTrash">M6 1h4l.5 1H14v1.5H2V2h3.5zM3 4.5h10l-.8 9.6a1 1 0 0 1-1 .9H4.8a1 1 0 0 1-1-.9zm1.6 1.5.6 7.5h5.6l.6-7.5z</StreamGeometry>
+        <StreamGeometry x:Key="IconChevronLeft">M10.5 3 5.5 8l5 5-1 1-6-6 6-6z</StreamGeometry>
+        <StreamGeometry x:Key="IconChevronRight">M5.5 3l5 5-5 5 1 1 6-6-6-6z</StreamGeometry>
+        <StreamGeometry x:Key="IconFirst">M3 3h1.5v10H3zM12.5 3 7.5 8l5 5-1 1-6-6 6-6z</StreamGeometry>
+        <StreamGeometry x:Key="IconLast">M11.5 3H13v10h-1.5zM3.5 3l5 5-5 5 1 1 6-6-6-6z</StreamGeometry>
+        <StreamGeometry x:Key="IconImage">M2 3h12v10H2zm1.5 1.5v5.4l2.8-2.8 2.2 2.2 1.5-1.5 2.5 2.5V4.5zM10.5 5.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z</StreamGeometry>
+        <StreamGeometry x:Key="IconRotateRight">M13 8A5 5 0 1 1 8 3h2V1.5L13 4l-3 2.5V5H8a3 3 0 1 0 3 3z</StreamGeometry>
+        <StreamGeometry x:Key="IconRotateLeft">M3 8a5 5 0 1 0 5-5H6V1.5L3 4l3 2.5V5h2a3 3 0 1 1-3 3z</StreamGeometry>
+        <StreamGeometry x:Key="IconFlipHorizontal">M7.25 1h1.5v14h-1.5zM6 3.5v9H1.5zM10 3.5l4.5 9H10z</StreamGeometry>
+        <StreamGeometry x:Key="IconFlipVertical">M1 7.25h14v1.5H1zM3.5 6h9V1.5zM3.5 10h9v4.5z</StreamGeometry>
+        <StreamGeometry x:Key="IconMove">M8 1l2.5 2.5H8.75v3.75h3.75V5.5L15 8l-2.5 2.5V8.75H8.75v3.75h1.75L8 15l-2.5-2.5h1.75V8.75H3.5v1.75L1 8l2.5-2.5v1.75h3.75V3.5H5.5z</StreamGeometry>
+        <StreamGeometry x:Key="IconPrinter">M4 1h8v4h1.5A1.5 1.5 0 0 1 15 6.5V12h-3v3H4v-3H1V6.5A1.5 1.5 0 0 1 2.5 5H4zm1.5 1.5V5h5V2.5zm0 7v4h5v-4z</StreamGeometry>
+        <StreamGeometry x:Key="IconChevronUp">M3 10.5 8 5.5l5 5-1 1-4-4-4 4z</StreamGeometry>
+        <StreamGeometry x:Key="IconChevronDown">M3 5.5l5 5 5-5 1 1-6 6-6-6z</StreamGeometry>
+        <StreamGeometry x:Key="IconMore">M3 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z</StreamGeometry>
+        <StreamGeometry x:Key="IconEye">M8 3.5C4.2 3.5 1.1 6 .3 8c.8 2 3.9 4.5 7.7 4.5s6.9-2.5 7.7-4.5c-.8-2-3.9-4.5-7.7-4.5zm0 7.3A2.8 2.8 0 1 1 8 5.2a2.8 2.8 0 0 1 0 5.6z</StreamGeometry>
+        <StreamGeometry x:Key="IconEyeOff">M8 3.5C4.2 3.5 1.1 6 .3 8c.8 2 3.9 4.5 7.7 4.5s6.9-2.5 7.7-4.5c-.8-2-3.9-4.5-7.7-4.5zm0 7.3A2.8 2.8 0 1 1 8 5.2a2.8 2.8 0 0 1 0 5.6zM2.1 1.4 14.6 13.9l-1 1L1.1 2.4z</StreamGeometry>
+        <StreamGeometry x:Key="IconLock">M8 1a3.5 3.5 0 0 0-3.5 3.5V6H3a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1.5V4.5A3.5 3.5 0 0 0 8 1zm-2 5V4.5a2 2 0 1 1 4 0V6zM8 9a1.2 1.2 0 0 1 .6 2.2l.4 1.8H7l.4-1.8A1.2 1.2 0 0 1 8 9z</StreamGeometry>
+        <StreamGeometry x:Key="IconLockOpen">M8 1a3.5 3.5 0 0 0-3.5 3.5H6A2 2 0 0 1 10 4.5V6H3a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H10V4.5A3.5 3.5 0 0 0 8 1zM8 9a1.2 1.2 0 0 1 .6 2.2l.4 1.8H7l.4-1.8A1.2 1.2 0 0 1 8 9z</StreamGeometry>
+        <StreamGeometry x:Key="IconUndo">M7 3.5V1L2 4.75 7 8.5V6h2.5a3.25 3.25 0 0 1 0 6.5H5V14h4.5a4.75 4.75 0 0 0 0-9.5H7z</StreamGeometry>
+        <StreamGeometry x:Key="IconRedo">M9 3.5V1l5 3.75L9 8.5V6H6.5a3.25 3.25 0 0 0 0 6.5H11V14H6.5a4.75 4.75 0 0 1 0-9.5H9z</StreamGeometry>
+        <StreamGeometry x:Key="IconDropper">M12.5 1a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM10.9 4.9l1.2 1.2-6.9 6.9-3.2 1 1-3.2z</StreamGeometry>
+        <StreamGeometry x:Key="IconCrop">M4.25 1h1.5v9H14v1.5h-2.25V15h-1.5v-3.5H4.25V5.75H1v-1.5h3.25zm1.5 4.75v4.25H10V5.75z</StreamGeometry>
+        <StreamGeometry x:Key="IconStop">M4 4h8v8H4z</StreamGeometry>
+        <StreamGeometry x:Key="IconAlignLeft">M2 3h12v1.5H2zM2 7.25h8v1.5H2zM2 11.5h10v1.5H2z</StreamGeometry>
+        <StreamGeometry x:Key="IconAlignCenter">M2 3h12v1.5H2zM4 7.25h8v1.5H4zM3 11.5h10v1.5H3z</StreamGeometry>
+        <StreamGeometry x:Key="IconAlignRight">M2 3h12v1.5H2zM6 7.25h8v1.5H6zM4 11.5h10v1.5H4z</StreamGeometry>
+    </Application.Resources>
+
+    <Application.Styles>
+        <FluentTheme />
+
+        <!-- ===== Typography ===== -->
+        <Style Selector="TextBlock.title">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+        </Style>
+        <Style Selector="TextBlock.section">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="LetterSpacing" Value="0.4" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextMuted}" />
+        </Style>
+        <Style Selector="TextBlock.label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextSecondary}" />
+        </Style>
+        <Style Selector="TextBlock.body">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+        </Style>
+        <Style Selector="TextBlock.muted">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextMuted}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+
+        <!-- ===== Buttons ===== -->
+        <Style Selector="Button">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="MinHeight" Value="32" />
+            <Setter Property="Padding" Value="12,0" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Background" Value="{StaticResource BrushSurface}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushBorderStrong}" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushHover}" />
+            <Setter Property="BorderBrush" Value="#B3BDBA" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushSelected}" />
+        </Style>
+        <Style Selector="Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushBorder}" />
+            <Setter Property="Foreground" Value="#B8BFBD" />
+        </Style>
+
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{StaticResource BrushPrimary}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushPrimary}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushPrimaryHover}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushPrimaryHover}" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style Selector="Button.primary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushPrimaryPressed}" />
+        </Style>
+        <Style Selector="Button.primary:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#C9D3D1" />
+            <Setter Property="BorderBrush" Value="#C9D3D1" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <Style Selector="Button.ghost">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextSecondary}" />
+        </Style>
+        <Style Selector="Button.ghost:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+        <Style Selector="Button.ghost:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+
+        <Style Selector="Button.swatch">
+            <Setter Property="Width" Value="24" />
+            <Setter Property="Height" Value="24" />
+            <Setter Property="MinHeight" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0,0,6,6" />
+            <Setter Property="CornerRadius" Value="12" />
+        </Style>
+        <Style Selector="Button.swatch:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <!-- Keep the swatch's own color on hover; only the border reacts -->
+            <Setter Property="Background" Value="{TemplateBinding Background}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushTextSecondary}" />
+        </Style>
+        <Style Selector="Button.swatch:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{TemplateBinding Background}" />
+        </Style>
+
+        <Style Selector="Button.icon">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="MinWidth" Value="30" />
+            <Setter Property="MinHeight" Value="30" />
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style Selector="Button.danger:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#FEF3F2" />
+            <Setter Property="Foreground" Value="{StaticResource BrushDanger}" />
+        </Style>
+
+        <!-- ===== Toggle buttons ===== -->
+        <Style Selector="ToggleButton">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="MinHeight" Value="32" />
+            <Setter Property="Padding" Value="12,0" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Background" Value="{StaticResource BrushSurface}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushBorderStrong}" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style Selector="ToggleButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushHover}" />
+            <Setter Property="BorderBrush" Value="#B3BDBA" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+        </Style>
+        <Style Selector="ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushSelected}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushPrimary}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+        </Style>
+        <Style Selector="ToggleButton:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#DCE7E3" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushPrimaryHover}" />
+        </Style>
+        <Style Selector="ToggleButton:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushBorder}" />
+            <Setter Property="Foreground" Value="#B8BFBD" />
+        </Style>
+        <Style Selector="ToggleButton.icon">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="MinWidth" Value="30" />
+            <Setter Property="MinHeight" Value="30" />
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="ToggleButton.ghost">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextSecondary}" />
+        </Style>
+        <Style Selector="ToggleButton.ghost:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+
+        <!-- ===== Image editing ===== -->
+        <Style Selector="Button.imageTile">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="MinHeight" Value="104" />
+            <Setter Property="Padding" Value="8" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Background" Value="#F7F8F7" />
+        </Style>
+        <Style Selector="Border.segmented">
+            <Setter Property="Background" Value="{StaticResource BrushCanvasBackdrop}" />
+            <Setter Property="CornerRadius" Value="7" />
+            <Setter Property="Padding" Value="2" />
+        </Style>
+        <Style Selector="RadioButton.segment">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextSecondary}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Name="PART_Segment" Background="{TemplateBinding Background}"
+                            CornerRadius="5" MinHeight="28" Padding="6,0">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="RadioButton.segment:pointerover">
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+        </Style>
+        <Style Selector="RadioButton.segment:checked">
+            <Setter Property="Background" Value="{StaticResource BrushSurface}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style Selector="RadioButton.segment:checked /template/ Border#PART_Segment">
+            <Setter Property="BoxShadow" Value="0 1 2 0 #22000000" />
+        </Style>
+        <Style Selector="Grid.sliderRow Slider">
+            <Setter Property="Margin" Value="4,-6" />
+        </Style>
+
+        <Style Selector="PathIcon">
+            <Setter Property="Width" Value="14" />
+            <Setter Property="Height" Value="14" />
+        </Style>
+
+        <!-- ===== Inputs ===== -->
+        <Style Selector="TextBox">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="MinHeight" Value="32" />
+            <Setter Property="Padding" Value="10,6" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style Selector="NumericUpDown">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="MinHeight" Value="32" />
+            <Setter Property="ShowButtonSpinner" Value="False" />
+        </Style>
+        <Style Selector="NumericUpDown /template/ TextBox">
+            <Setter Property="Padding" Value="4,6" />
+        </Style>
+        <Style Selector="TextBlock.adorn">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextMuted}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="10,0,2,0" />
+        </Style>
+        <Style Selector="TextBlock.adornRight">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextMuted}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="2,0,10,0" />
+        </Style>
+        <Style Selector="ComboBox">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="MinHeight" Value="32" />
+        </Style>
+        <Style Selector="CheckBox">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}" />
+            <Setter Property="MinHeight" Value="28" />
+        </Style>
+        <Style Selector="MenuItem">
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+
+        <!-- ===== Tabs ===== -->
+        <Style Selector="TabItem">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="MinHeight" Value="44" />
+            <Setter Property="Padding" Value="4,0" />
+            <Setter Property="Margin" Value="12,0,8,0" />
+        </Style>
+
+        <!-- ===== Layer list ===== -->
+        <Style Selector="ListBox.layers">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="8,0" />
+        </Style>
+        <Style Selector="ListBox.layers ListBoxItem">
+            <Setter Property="Padding" Value="10,0" />
+            <Setter Property="MinHeight" Value="34" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Margin" Value="0,1" />
+        </Style>
+        <Style Selector="ListBox.layers ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushHover}" />
+        </Style>
+        <Style Selector="ListBox.layers ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushSelected}" />
+        </Style>
+        <Style Selector="ListBox.layers ListBoxItem:selected:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#DCE7E3" />
+        </Style>
+        <Style Selector="ListBox.layers ListBoxItem:selected TextBlock">
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style Selector="ListBox.layers PathIcon.layerIcon">
+            <Setter Property="Foreground" Value="{StaticResource BrushTextMuted}" />
+        </Style>
+        <Style Selector="ListBox.layers PathIcon.layerIcon.dynamic">
+            <!-- A deeper Muted Teal: the brand Grey Olive is too close to the muted grey of the other icons -->
+            <Setter Property="Foreground" Value="#4E7A6F" />
+            <Setter Property="ToolTip.Tip" Value="Filled from each person's data" />
+        </Style>
+        <!-- Row buttons stay out of the way until the row is hovered or selected -->
+        <Style Selector="ListBox.layers ListBoxItem Button.rowAction">
+            <Setter Property="Opacity" Value="0" />
+        </Style>
+        <Style Selector="ListBox.layers ListBoxItem:pointerover Button.rowAction, ListBox.layers ListBoxItem:selected Button.rowAction, ListBox.layers ListBoxItem Button.rowAction.pinned">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+
+        <!-- ===== Collapsible section header ===== -->
+        <Style Selector="ToggleButton.disclosure">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="MinHeight" Value="22" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="ToggleButton.disclosure:pointerover /template/ ContentPresenter#PART_ContentPresenter, ToggleButton.disclosure:pressed /template/ ContentPresenter#PART_ContentPresenter, ToggleButton.disclosure:checked /template/ ContentPresenter#PART_ContentPresenter, ToggleButton.disclosure:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+        <Style Selector="ToggleButton.disclosure PathIcon.chevron">
+            <Setter Property="Width" Value="10" />
+            <Setter Property="Height" Value="10" />
+            <Setter Property="Foreground" Value="{StaticResource BrushTextMuted}" />
+        </Style>
+        <Style Selector="ToggleButton.disclosure:checked PathIcon.chevron">
+            <Setter Property="RenderTransform" Value="rotate(90deg)" />
+        </Style>
+        <Style Selector="ToggleButton.disclosure:pointerover TextBlock.section">
+            <Setter Property="Foreground" Value="{StaticResource BrushTextSecondary}" />
+        </Style>
+
+        <!-- ===== Misc ===== -->
+        <Style Selector="ProgressBar">
+            <Setter Property="MinHeight" Value="6" />
+            <Setter Property="Height" Value="6" />
+            <Setter Property="CornerRadius" Value="3" />
+            <Setter Property="Foreground" Value="{StaticResource BrushPrimary}" />
+            <Setter Property="Background" Value="{StaticResource BrushBorder}" />
+        </Style>
+        <Style Selector="Border.divider">
+            <Setter Property="Background" Value="{StaticResource BrushBorder}" />
+            <Setter Property="Height" Value="1" />
+        </Style>
+        <Style Selector="Border.chip">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="8,2" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <!-- ===== People list ===== -->
+        <Style Selector="ListBox.people">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="ListBox.people ListBoxItem">
+            <Setter Property="Padding" Value="8,6" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Margin" Value="0,2" />
+            <Setter Property="Background" Value="{StaticResource BrushSurface}" />
+        </Style>
+        <Style Selector="ListBox.people ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushHover}" />
+        </Style>
+        <Style Selector="ListBox.people ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushSelected}" />
+        </Style>
+        <Style Selector="ListBox.people ListBoxItem:selected:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#DCE7E3" />
+        </Style>
+        <!-- Row buttons stay out of the way until the row is hovered or selected; the print status shows otherwise -->
+        <Style Selector="ListBox.people ListBoxItem StackPanel.personActions">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="ListBox.people ListBoxItem:pointerover StackPanel.personActions, ListBox.people ListBoxItem:selected StackPanel.personActions">
+            <Setter Property="IsVisible" Value="True" />
+        </Style>
+        <Style Selector="ListBox.people ListBoxItem:pointerover Border.personStatus, ListBox.people ListBoxItem:selected Border.personStatus">
+            <Setter Property="Opacity" Value="0" />
+        </Style>
+        <!-- Where a dragged image file will land -->
+        <Style Selector="Button.personPhoto.dropTarget /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource BrushSelected}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushPrimary}" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+        <Style Selector="Border.previewDrop.dropTarget">
+            <Setter Property="BorderBrush" Value="{StaticResource BrushPrimary}" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+        <!-- ===== People column headings: drag one sideways to move the column ===== -->
+        <Style Selector="Border.columnHeader">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Padding" Value="8,3" />
+            <Setter Property="Margin" Value="3,0,8,0" />
+            <Setter Property="Cursor" Value="SizeWestEast" />
+        </Style>
+        <Style Selector="Border.columnHeader:pointerover">
+            <Setter Property="Background" Value="{StaticResource BrushHover}" />
+        </Style>
+        <Style Selector="ItemsControl.columnHeaders ContentPresenter.dragging Border.columnHeader">
+            <Setter Property="Background" Value="{StaticResource BrushSubtleHighlight}" />
+        </Style>
+
+        <Style Selector="Button.personPhoto">
+            <Setter Property="Width" Value="44" />
+            <Setter Property="Height" Value="56" />
+            <Setter Property="MinHeight" Value="0" />
+            <Setter Property="Padding" Value="2" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Background" Value="#F7F8F7" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        </Style>
+    </Application.Styles>
+</Application>

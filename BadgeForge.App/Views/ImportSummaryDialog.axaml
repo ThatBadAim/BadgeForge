@@ -1,0 +1,151 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:BadgeForge.App.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="620" d:DesignHeight="520"
+        x:Class="BadgeForge.App.Views.ImportSummaryDialog"
+        x:DataType="vm:ImportSummaryViewModel"
+        Width="620" MinWidth="520" MaxHeight="640"
+        SizeToContent="Height" CanResize="False" ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Title="Import roster"
+        Background="{StaticResource BrushNeutralBase}">
+
+    <Window.Styles>
+        <!-- A detected column, shown as a chip -->
+        <Style Selector="Border.columnChip">
+            <Setter Property="Background" Value="{StaticResource BrushSubtleHighlight}"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="8,3"/>
+        </Style>
+        <Style Selector="Border.columnChip.generated">
+            <Setter Property="Background" Value="{StaticResource BrushHover}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BrushBorderStrong}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style Selector="TextBlock.previewCell">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="10,6"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="{StaticResource BrushTextPrimary}"/>
+        </Style>
+        <Style Selector="TextBlock.previewCell.empty">
+            <Setter Property="Foreground" Value="{StaticResource BrushTextMuted}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*,Auto" Margin="20">
+
+        <!-- What was found -->
+        <StackPanel Grid.Row="0" Spacing="4">
+            <TextBlock Text="{Binding FileName}" FontSize="16" FontWeight="SemiBold"
+                       Foreground="{StaticResource BrushTextPrimary}" TextTrimming="CharacterEllipsis"
+                       ToolTip.Tip="{Binding FilePath}"/>
+            <TextBlock Classes="label" Text="{Binding HeadlineText}"/>
+            <TextBlock Classes="muted" Text="{Binding NoteText}" IsVisible="{Binding HasNote}"
+                       TextWrapping="Wrap" Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Margin="0,18,0,0" VerticalScrollBarVisibility="Auto">
+            <StackPanel Spacing="18">
+
+                <!-- Detected columns -->
+                <StackPanel Spacing="8">
+                    <TextBlock Classes="section" Text="COLUMNS FOUND"/>
+                    <ItemsControl ItemsSource="{Binding Columns}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="vm:ImportColumnSummary">
+                                <Border Classes="columnChip" Classes.generated="{Binding IsGenerated}" Margin="0,0,6,6"
+                                        ToolTip.Tip="This column had no heading, so it was named by its position.">
+                                    <TextBlock Text="{Binding Name}" FontSize="12"
+                                               Foreground="{StaticResource BrushTextPrimary}"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+                <!-- Three-row preview -->
+                <StackPanel Spacing="8" IsVisible="{Binding HasPreview}">
+                    <TextBlock Classes="section" Text="PREVIEW"/>
+                    <TextBlock Classes="label" Text="{Binding PreviewCaption}"/>
+                    <Border Background="{StaticResource BrushSurface}" CornerRadius="8" ClipToBounds="True"
+                            BorderBrush="{StaticResource BrushBorderStrong}" BorderThickness="1">
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                            <StackPanel MinWidth="{Binding PreviewWidth}">
+
+                                <!-- Heading row -->
+                                <Border Background="{StaticResource BrushHover}"
+                                        BorderBrush="{StaticResource BrushBorder}" BorderThickness="0,0,0,1">
+                                    <Grid ColumnDefinitions="40,*">
+                                        <TextBlock Grid.Column="0" Classes="section" Text="ROW" Margin="10,6"
+                                                   VerticalAlignment="Center"/>
+                                        <ItemsControl Grid.Column="1" ItemsSource="{Binding Columns}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <UniformGrid Rows="1"/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate x:DataType="vm:ImportColumnSummary">
+                                                    <TextBlock Classes="section" Text="{Binding Name}" Margin="10,6"
+                                                               TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </Grid>
+                                </Border>
+
+                                <!-- Data rows -->
+                                <ItemsControl ItemsSource="{Binding PreviewRows}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:ImportPreviewRow">
+                                            <Border BorderBrush="{StaticResource BrushBorder}" BorderThickness="0,0,0,1">
+                                                <Grid ColumnDefinitions="40,*">
+                                                    <TextBlock Grid.Column="0" Classes="label" Text="{Binding Number}"
+                                                               Margin="10,6" VerticalAlignment="Center"/>
+                                                    <ItemsControl Grid.Column="1" ItemsSource="{Binding Cells}">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <UniformGrid Rows="1"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate x:DataType="vm:ImportPreviewCell">
+                                                                <TextBlock Classes="previewCell" Classes.empty="{Binding IsEmpty}"
+                                                                           Text="{Binding Text}" ToolTip.Tip="{Binding Text}"/>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Append, overwrite or back out -->
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto,Auto" Margin="0,20,0,0">
+            <TextBlock Grid.Column="0" Classes="muted" VerticalAlignment="Center" MaxWidth="240"
+                       TextWrapping="Wrap" IsVisible="{Binding !HasRows}"
+                       Text="No data rows were found under the headings."/>
+            <Button Grid.Column="2" x:Name="AppendButton" Content="{Binding AppendButtonText}"
+                    IsVisible="{Binding CanAppend}" Click="OnAppendClick" Margin="0,0,8,0"/>
+            <Button Grid.Column="3" x:Name="ReplaceButton" Classes="primary" Content="{Binding ReplaceButtonText}"
+                    IsEnabled="{Binding HasRows}" IsDefault="True" Click="OnReplaceClick"
+                    MinWidth="120" HorizontalContentAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>

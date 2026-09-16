@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="BadgeForge.App/BadgeForge.App.csproj" />
+  <Project Path="BadgeForge.Core.Data/BadgeForge.Core.Data.csproj" />
+  <Project Path="BadgeForge.Core.Printing/BadgeForge.Core.Printing.csproj" />
+  <Project Path="BadgeForge.Core.Rendering/BadgeForge.Core.Rendering.csproj" />
+  <Project Path="BadgeForge.Core.Templates/BadgeForge.Core.Templates.csproj" />
+  <Project Path="BadgeForge.Tests/BadgeForge.Tests.csproj" />
+  <Project Path="BadgeForge.UiTests/BadgeForge.UiTests.csproj" />
+</Solution>

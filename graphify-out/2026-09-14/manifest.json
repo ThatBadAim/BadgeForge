@@ -1,0 +1,548 @@
+{
+  "BadgeForge.App/App.axaml.cs": {
+    "mtime": 1789412153.560422,
+    "seen": 1789414934.981339,
+    "ast_hash": "6f3699368ae5d18ec00311f8d81c53eb",
+    "semantic_hash": "6f3699368ae5d18ec00311f8d81c53eb"
+  },
+  "BadgeForge.App/BadgeForge.App.csproj": {
+    "mtime": 1789417428.4828072,
+    "seen": 1789417816.2645376,
+    "ast_hash": "733ba56a299b61b2bfd4c42762ee7239",
+    "semantic_hash": "733ba56a299b61b2bfd4c42762ee7239"
+  },
+  "BadgeForge.App/MainWindow.axaml.cs": {
+    "mtime": 1789421742.9286942,
+    "seen": 1789421772.5331352,
+    "ast_hash": "434e7405ef917a2150d4ecd3bd2312de",
+    "semantic_hash": ""
+  },
+  "BadgeForge.App/Program.cs": {
+    "mtime": 1789412153.591422,
+    "seen": 1789414934.9813585,
+    "ast_hash": "60929b0c9b9c31d9d5e6732210dcb2a3",
+    "semantic_hash": "60929b0c9b9c31d9d5e6732210dcb2a3"
+  },
+  "BadgeForge.Core.Data/BadgeForge.Core.Data.csproj": {
+    "mtime": 1789414004.2082293,
+    "seen": 1789414934.981361,
+    "ast_hash": "da7d8d06298b6675eb433b12405d3a2b",
+    "semantic_hash": "da7d8d06298b6675eb433b12405d3a2b"
+  },
+  "BadgeForge.Core.Data/Models/BadgeRecord.cs": {
+    "mtime": 1789414439.9780052,
+    "seen": 1789414934.9813633,
+    "ast_hash": "b861922b793001d5c43a6285d2abc90c",
+    "semantic_hash": "b861922b793001d5c43a6285d2abc90c"
+  },
+  "BadgeForge.Core.Data/Models/ColumnMapping.cs": {
+    "mtime": 1789414459.6547883,
+    "seen": 1789414934.9813654,
+    "ast_hash": "0cbbfb709e2e8431a1335c1d5bd94e2a",
+    "semantic_hash": "0cbbfb709e2e8431a1335c1d5bd94e2a"
+  },
+  "BadgeForge.Core.Data/Models/PhotoMatchingOptions.cs": {
+    "mtime": 1789414495.7595854,
+    "seen": 1789414934.9813676,
+    "ast_hash": "9fae2885bea24c94d6dfde8eda5cb1fb",
+    "semantic_hash": "9fae2885bea24c94d6dfde8eda5cb1fb"
+  },
+  "BadgeForge.Core.Data/Services/CsvDataIngestionService.cs": {
+    "mtime": 1789414480.8286402,
+    "seen": 1789414934.9813693,
+    "ast_hash": "add417336ebb659844859b2767fd8166",
+    "semantic_hash": "add417336ebb659844859b2767fd8166"
+  },
+  "BadgeForge.Core.Data/Services/PhotoMatchingService.cs": {
+    "mtime": 1789414514.2775702,
+    "seen": 1789414934.9813712,
+    "ast_hash": "8fe21397a135d86ad30e1454e497ef93",
+    "semantic_hash": "8fe21397a135d86ad30e1454e497ef93"
+  },
+  "BadgeForge.Core.Data/Validation/BarcodeValidator.cs": {
+    "mtime": 1789414541.7236474,
+    "seen": 1789414934.9813735,
+    "ast_hash": "433276233295a56269480b694909555c",
+    "semantic_hash": "433276233295a56269480b694909555c"
+  },
+  "BadgeForge.Core.Data/Validation/IBarcodeValidator.cs": {
+    "mtime": 1789414526.423576,
+    "seen": 1789414934.981376,
+    "ast_hash": "18f826eb7efaf5361d4aacded6c02e7d",
+    "semantic_hash": "18f826eb7efaf5361d4aacded6c02e7d"
+  },
+  "BadgeForge.Core.Data/Validation/PreFlightValidationOptions.cs": {
+    "mtime": 1789414585.908994,
+    "seen": 1789414934.981378,
+    "ast_hash": "fca3a8dbdfb6e9a863b6eb82ed656e1e",
+    "semantic_hash": "fca3a8dbdfb6e9a863b6eb82ed656e1e"
+  },
+  "BadgeForge.Core.Data/Validation/PreFlightValidationReport.cs": {
+    "mtime": 1789414571.0038486,
+    "seen": 1789414934.98138,
+    "ast_hash": "d80e416424fc5ac8b2efbd967dc0a801",
+    "semantic_hash": "d80e416424fc5ac8b2efbd967dc0a801"
+  },
+  "BadgeForge.Core.Data/Validation/PreFlightValidationService.cs": {
+    "mtime": 1789420692.676804,
+    "seen": 1789421386.3795228,
+    "ast_hash": "e9f29182f1c58fc28266632b6ebfb097",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Data/Validation/ValidationIssue.cs": {
+    "mtime": 1789414554.9887242,
+    "seen": 1789414934.981384,
+    "ast_hash": "ff58487199500404bc473673e7464cc9",
+    "semantic_hash": "ff58487199500404bc473673e7464cc9"
+  },
+  "BadgeForge.Core.Printing/BadgeForge.Core.Printing.csproj": {
+    "mtime": 1789412303.2519372,
+    "seen": 1789414934.9813864,
+    "ast_hash": "8a59bbfbb5b1d7ed65d37f0f593c42f8",
+    "semantic_hash": "8a59bbfbb5b1d7ed65d37f0f593c42f8"
+  },
+  "BadgeForge.Core.Printing/Drivers/DefaultRibbonModeController.cs": {
+    "mtime": 1789412578.8213704,
+    "seen": 1789414934.9813883,
+    "ast_hash": "d1775d8976b12d87f11da5b7e4e3dbb7",
+    "semantic_hash": "d1775d8976b12d87f11da5b7e4e3dbb7"
+  },
+  "BadgeForge.Core.Printing/Drivers/IdpSmart31CardPrinterDriver.cs": {
+    "mtime": 1789412848.5484705,
+    "seen": 1789414934.981391,
+    "ast_hash": "f576437659030332d1b1b791cdaed751",
+    "semantic_hash": "f576437659030332d1b1b791cdaed751"
+  },
+  "BadgeForge.Core.Printing/Drivers/IdpSmart31StatusMonitor.cs": {
+    "mtime": 1789412916.7101278,
+    "seen": 1789414934.981393,
+    "ast_hash": "e20b9bfe2b8a9de2db22715181401970",
+    "semantic_hash": "e20b9bfe2b8a9de2db22715181401970"
+  },
+  "BadgeForge.Core.Printing/Drivers/MockCardPrinterDriver.cs": {
+    "mtime": 1789412715.3937373,
+    "seen": 1789414934.981395,
+    "ast_hash": "e97e51e7bb437b1905e94787ad17e582",
+    "semantic_hash": "e97e51e7bb437b1905e94787ad17e582"
+  },
+  "BadgeForge.Core.Printing/Drivers/MockStatusMonitor.cs": {
+    "mtime": 1789412695.4031386,
+    "seen": 1789414934.9813967,
+    "ast_hash": "c756828470d55dd5f0a277891768918b",
+    "semantic_hash": "c756828470d55dd5f0a277891768918b"
+  },
+  "BadgeForge.Core.Printing/Exceptions/PrinterExceptions.cs": {
+    "mtime": 1789412475.2427747,
+    "seen": 1789414934.9813995,
+    "ast_hash": "efe8ca5e0f6b5391e88478e45e5924b2",
+    "semantic_hash": "efe8ca5e0f6b5391e88478e45e5924b2"
+  },
+  "BadgeForge.Core.Printing/Interfaces/ICardPrinterDriver.cs": {
+    "mtime": 1789412617.255244,
+    "seen": 1789414934.9814014,
+    "ast_hash": "3556537376df902f7b6e38e8d9d32612",
+    "semantic_hash": "3556537376df902f7b6e38e8d9d32612"
+  },
+  "BadgeForge.Core.Printing/Interfaces/ICardPrinterStatusMonitor.cs": {
+    "mtime": 1789412598.81823,
+    "seen": 1789414934.9814157,
+    "ast_hash": "f0fb514b1bae5bfcc878329f1aae53b1",
+    "semantic_hash": "f0fb514b1bae5bfcc878329f1aae53b1"
+  },
+  "BadgeForge.Core.Printing/Interfaces/IRibbonModeController.cs": {
+    "mtime": 1789412557.7671206,
+    "seen": 1789414934.9814196,
+    "ast_hash": "dcc842b31719fed6db4e93dc03ea1562",
+    "semantic_hash": "dcc842b31719fed6db4e93dc03ea1562"
+  },
+  "BadgeForge.Core.Printing/Models/CardFormat.cs": {
+    "mtime": 1789412457.429353,
+    "seen": 1789414934.981423,
+    "ast_hash": "1380f7c77ba91179f232d957088cb5d0",
+    "semantic_hash": "1380f7c77ba91179f232d957088cb5d0"
+  },
+  "BadgeForge.Core.Printing/Models/CardPrintJob.cs": {
+    "mtime": 1789412537.934744,
+    "seen": 1789414934.9814248,
+    "ast_hash": "b640f42247f78a78c6b963fc8ad8b1a6",
+    "semantic_hash": "b640f42247f78a78c6b963fc8ad8b1a6"
+  },
+  "BadgeForge.Core.Printing/Models/PrinterCapabilities.cs": {
+    "mtime": 1789412496.748009,
+    "seen": 1789414934.9814267,
+    "ast_hash": "292a717b3c7458bda50e7afaa030a4d6",
+    "semantic_hash": "292a717b3c7458bda50e7afaa030a4d6"
+  },
+  "BadgeForge.Core.Printing/Models/PrinterStatus.cs": {
+    "mtime": 1789412518.6350322,
+    "seen": 1789414934.981429,
+    "ast_hash": "89ae9a3c4a0eb26da2bf5d445bae5006",
+    "semantic_hash": "89ae9a3c4a0eb26da2bf5d445bae5006"
+  },
+  "BadgeForge.Core.Rendering/BadgeForge.Core.Rendering.csproj": {
+    "mtime": 1789415313.3025775,
+    "seen": 1789415991.82923,
+    "ast_hash": "81374d00a0548dd051fc948c82809b70",
+    "semantic_hash": "81374d00a0548dd051fc948c82809b70"
+  },
+  "BadgeForge.Core.Templates/BadgeForge.Core.Templates.csproj": {
+    "mtime": 1789413964.6619918,
+    "seen": 1789414934.981433,
+    "ast_hash": "52388d62dcf163605fa3c7ab07bb8fb3",
+    "semantic_hash": "52388d62dcf163605fa3c7ab07bb8fb3"
+  },
+  "BadgeForge.Core.Templates/Enums/TemplateEnums.cs": {
+    "mtime": 1789414035.995191,
+    "seen": 1789414934.9814346,
+    "ast_hash": "a2c849ad88a077dfe8854e86b82010a1",
+    "semantic_hash": "a2c849ad88a077dfe8854e86b82010a1"
+  },
+  "BadgeForge.Core.Templates/Layers/BarcodeLayer.cs": {
+    "mtime": 1789414197.94452,
+    "seen": 1789414934.9814365,
+    "ast_hash": "8e9a42ab6307c3892bb07cfaad90a346",
+    "semantic_hash": "8e9a42ab6307c3892bb07cfaad90a346"
+  },
+  "BadgeForge.Core.Templates/Layers/PhotoLayer.cs": {
+    "mtime": 1789420532.0305536,
+    "seen": 1789421386.379574,
+    "ast_hash": "1c4ef8115d7411cf6dea613c572b5b8e",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Templates/Layers/StaticImageLayer.cs": {
+    "mtime": 1789420532.0083063,
+    "seen": 1789421386.379575,
+    "ast_hash": "ab07ca55ff9a5e374908530555ba2246",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Templates/Layers/TemplateLayer.cs": {
+    "mtime": 1789414287.4058726,
+    "seen": 1789414934.9814422,
+    "ast_hash": "f4b83a90be62cbd17c3ae7f7fec64421",
+    "semantic_hash": "f4b83a90be62cbd17c3ae7f7fec64421"
+  },
+  "BadgeForge.Core.Templates/Layers/TextLayer.cs": {
+    "mtime": 1789414104.259319,
+    "seen": 1789414934.9814448,
+    "ast_hash": "a4d17f06f895ff315c1fc974c84a544b",
+    "semantic_hash": "a4d17f06f895ff315c1fc974c84a544b"
+  },
+  "BadgeForge.Core.Templates/Migration/ITemplateMigrator.cs": {
+    "mtime": 1789414321.928293,
+    "seen": 1789414934.9814467,
+    "ast_hash": "9cac6620b3ac24ce26dfa597ace328f4",
+    "semantic_hash": "9cac6620b3ac24ce26dfa597ace328f4"
+  },
+  "BadgeForge.Core.Templates/Migration/TemplateMigrationPipeline.cs": {
+    "mtime": 1789414360.1688044,
+    "seen": 1789414934.9814484,
+    "ast_hash": "020b7b8bcbb978b1e1a5124ba657f41f",
+    "semantic_hash": "020b7b8bcbb978b1e1a5124ba657f41f"
+  },
+  "BadgeForge.Core.Templates/Migration/V1NoOpMigrator.cs": {
+    "mtime": 1789414343.234407,
+    "seen": 1789414934.9814503,
+    "ast_hash": "fdbec4a24a37b8c49816bb5a18bcc03b",
+    "semantic_hash": "fdbec4a24a37b8c49816bb5a18bcc03b"
+  },
+  "BadgeForge.Core.Templates/Models/TemplateDefinition.cs": {
+    "mtime": 1789414300.8243222,
+    "seen": 1789414934.981452,
+    "ast_hash": "6a4feb189108a26d6ad4794cb7a3e7d1",
+    "semantic_hash": "6a4feb189108a26d6ad4794cb7a3e7d1"
+  },
+  "BadgeForge.Core.Templates/Registry/ILayerRegistry.cs": {
+    "mtime": 1789414235.2161062,
+    "seen": 1789414934.9814544,
+    "ast_hash": "09a06c085e22092e71372ad450861076",
+    "semantic_hash": "09a06c085e22092e71372ad450861076"
+  },
+  "BadgeForge.Core.Templates/Registry/LayerJsonConverter.cs": {
+    "mtime": 1789414279.1175523,
+    "seen": 1789414934.981458,
+    "ast_hash": "dae065c522cdce600dc5b693f71518d1",
+    "semantic_hash": "dae065c522cdce600dc5b693f71518d1"
+  },
+  "BadgeForge.Core.Templates/Registry/LayerRegistry.cs": {
+    "mtime": 1789414263.0663667,
+    "seen": 1789414934.9814603,
+    "ast_hash": "f17bc32b430f53679374366ee59b06c2",
+    "semantic_hash": "f17bc32b430f53679374366ee59b06c2"
+  },
+  "BadgeForge.Core.Templates/Storage/ITemplateStorage.cs": {
+    "mtime": 1789414375.5043309,
+    "seen": 1789414934.9814622,
+    "ast_hash": "28ab69b648329efc36b7ab0f5a3aea85",
+    "semantic_hash": "28ab69b648329efc36b7ab0f5a3aea85"
+  },
+  "BadgeForge.Core.Templates/Storage/JsonTemplateStorage.cs": {
+    "mtime": 1789414392.770875,
+    "seen": 1789414934.9814644,
+    "ast_hash": "9c07685ad6d84e05a824c43acfcd07e3",
+    "semantic_hash": "9c07685ad6d84e05a824c43acfcd07e3"
+  },
+  "BadgeForge.Tests/BadgeForge.Tests.csproj": {
+    "mtime": 1789417705.085549,
+    "seen": 1789417816.2658749,
+    "ast_hash": "ef8293a7dd3082137e0fc6ef026a3367",
+    "semantic_hash": "ef8293a7dd3082137e0fc6ef026a3367"
+  },
+  "BadgeForge.Tests/CapabilitiesProbeTests.cs": {
+    "mtime": 1789412991.9943182,
+    "seen": 1789414934.9814684,
+    "ast_hash": "408921546e3991abe0d3ef13765fc86b",
+    "semantic_hash": "408921546e3991abe0d3ef13765fc86b"
+  },
+  "BadgeForge.Tests/CardFormatTests.cs": {
+    "mtime": 1789412968.5681183,
+    "seen": 1789414934.9814703,
+    "ast_hash": "9180857b8407ff1e106d9e865b666b3b",
+    "semantic_hash": "9180857b8407ff1e106d9e865b666b3b"
+  },
+  "BadgeForge.Tests/IdpSmart31CardPrinterDriverTests.cs": {
+    "mtime": 1789413020.6628826,
+    "seen": 1789414934.9814727,
+    "ast_hash": "cae38542a0dfad8d6f8028e0fa252f1d",
+    "semantic_hash": "cae38542a0dfad8d6f8028e0fa252f1d"
+  },
+  "BadgeForge.Tests/MockCardPrinterDriverTests.cs": {
+    "mtime": 1789413010.578522,
+    "seen": 1789414934.9814746,
+    "ast_hash": "4db79798deaa69e3a0422d69167ab562",
+    "semantic_hash": "4db79798deaa69e3a0422d69167ab562"
+  },
+  "BadgeForge.Tests/PreFlightValidationTests.cs": {
+    "mtime": 1789414880.096812,
+    "seen": 1789414934.9814768,
+    "ast_hash": "f99a325739410e361f6e0188bfef17dc",
+    "semantic_hash": "f99a325739410e361f6e0188bfef17dc"
+  },
+  "BadgeForge.Tests/TemplateSerializationTests.cs": {
+    "mtime": 1789414658.241053,
+    "seen": 1789414934.9814787,
+    "ast_hash": "4febc979f01c16c777fc64393a74912c",
+    "semantic_hash": "4febc979f01c16c777fc64393a74912c"
+  },
+  "BadgeForge.sln": {
+    "mtime": 1789412249.4263804,
+    "seen": 1789414934.9814806,
+    "ast_hash": "dccb77a42f2aca004b6b5279308bb6f1",
+    "semantic_hash": "dccb77a42f2aca004b6b5279308bb6f1"
+  },
+  "BadgeForge.slnx": {
+    "mtime": 1789412216.5670466,
+    "seen": 1789414934.9814827,
+    "ast_hash": "fa64b98ad76a245afcaa5060737fea29",
+    "semantic_hash": "fa64b98ad76a245afcaa5060737fea29"
+  },
+  "BadgeForge.Core.Rendering/CardRenderer.cs": {
+    "mtime": 1789420692.6761782,
+    "seen": 1789421386.379554,
+    "ast_hash": "f4173dc04a501b6879c9bb1f6f94d35a",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Rendering/Elements/BarcodeRenderer.cs": {
+    "mtime": 1789415541.8454835,
+    "seen": 1789415991.8292346,
+    "ast_hash": "808d3a6405cb9e2a27f32a7216222a03",
+    "semantic_hash": "808d3a6405cb9e2a27f32a7216222a03"
+  },
+  "BadgeForge.Core.Rendering/Elements/PhotoRenderer.cs": {
+    "mtime": 1789421297.3369622,
+    "seen": 1789421386.3795629,
+    "ast_hash": "e8db7eb9622df47432515acb34505c2b",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Rendering/Elements/StaticImageRenderer.cs": {
+    "mtime": 1789420692.650978,
+    "seen": 1789421386.379564,
+    "ast_hash": "1fd4acd2b81cc7895589834437e0964e",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Rendering/Elements/TextRenderer.cs": {
+    "mtime": 1789415522.0607164,
+    "seen": 1789415991.8292377,
+    "ast_hash": "0dec02b7385f7346abd3a5acc3fd181c",
+    "semantic_hash": "0dec02b7385f7346abd3a5acc3fd181c"
+  },
+  "BadgeForge.Core.Rendering/ICardRenderer.cs": {
+    "mtime": 1789415480.5313199,
+    "seen": 1789415991.829239,
+    "ast_hash": "d91c50f12a0926b6fa04a5dca5897880",
+    "semantic_hash": "d91c50f12a0926b6fa04a5dca5897880"
+  },
+  "BadgeForge.Core.Rendering/Testing/ImageDiffService.cs": {
+    "mtime": 1789415575.4071643,
+    "seen": 1789415991.8292398,
+    "ast_hash": "48674b13f7d03db74b6edcf97172b58b",
+    "semantic_hash": "48674b13f7d03db74b6edcf97172b58b"
+  },
+  "BadgeForge.Tests/CardRendererTests.cs": {
+    "mtime": 1789415791.0510287,
+    "seen": 1789415991.8296404,
+    "ast_hash": "df40ae1930761670af0af944b6101e83",
+    "semantic_hash": "df40ae1930761670af0af944b6101e83"
+  },
+  "BadgeForge.Tests/GoldenImageTests.cs": {
+    "mtime": 1789415912.035098,
+    "seen": 1789415991.8296418,
+    "ast_hash": "c189e182fd61137a3293e410772fa829",
+    "semantic_hash": "c189e182fd61137a3293e410772fa829"
+  },
+  "BadgeForge.Core.Printing/Batch/BatchExecutionModels.cs": {
+    "mtime": 1789419633.2803512,
+    "seen": 1789419663.70733,
+    "ast_hash": "1528367c115e3b2e68dade96945ec15e",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Printing/Batch/BatchPrintEngine.cs": {
+    "mtime": 1789419633.2819402,
+    "seen": 1789419663.7073317,
+    "ast_hash": "ab078d4d874881ddde97747f9cebc5be",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Printing/Batch/IBatchCheckpointStore.cs": {
+    "mtime": 1789416795.755098,
+    "seen": 1789416922.8311486,
+    "ast_hash": "60b2ad91b77cd90a7a8f41858623f42c",
+    "semantic_hash": "60b2ad91b77cd90a7a8f41858623f42c"
+  },
+  "BadgeForge.Core.Printing/Batch/IBatchPrintEngine.cs": {
+    "mtime": 1789419633.2809627,
+    "seen": 1789419663.7073338,
+    "ast_hash": "a2dfa914ae6e06278901005db37f5e26",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Printing/Batch/ISpoolerJobCorrelator.cs": {
+    "mtime": 1789416810.99254,
+    "seen": 1789416922.8311508,
+    "ast_hash": "eb3f4169c0ed24990540451d1f8bae3d",
+    "semantic_hash": "eb3f4169c0ed24990540451d1f8bae3d"
+  },
+  "BadgeForge.Core.Printing/Batch/JsonBatchCheckpointStore.cs": {
+    "mtime": 1789416801.4892642,
+    "seen": 1789416922.831152,
+    "ast_hash": "5978009e4d080d24b47986c1b3671003",
+    "semantic_hash": "5978009e4d080d24b47986c1b3671003"
+  },
+  "BadgeForge.Core.Printing/Batch/PrintDocumentHelper.cs": {
+    "mtime": 1789416828.7820578,
+    "seen": 1789416922.831153,
+    "ast_hash": "63fb90c5d8e1911a73ebd4c6a94ebb6a",
+    "semantic_hash": "63fb90c5d8e1911a73ebd4c6a94ebb6a"
+  },
+  "BadgeForge.Core.Printing/Batch/SpoolerJobCorrelator.cs": {
+    "mtime": 1789416819.2237792,
+    "seen": 1789416922.8311539,
+    "ast_hash": "e3f6da33e55cb6e604504ff9a9d8b773",
+    "semantic_hash": "e3f6da33e55cb6e604504ff9a9d8b773"
+  },
+  "BadgeForge.Tests/BatchPrintEngineTests.cs": {
+    "mtime": 1789419651.25561,
+    "seen": 1789419663.7073917,
+    "ast_hash": "05c75400a55a95e251fec72f605bc613",
+    "semantic_hash": ""
+  },
+  "BadgeForge.App/Controls/InteractiveBadgeCanvas.cs": {
+    "mtime": 1789422491.043848,
+    "seen": 1789422537.6978087,
+    "ast_hash": "1a7ac5dc53693656523894258364c3ee",
+    "semantic_hash": ""
+  },
+  "BadgeForge.App/ViewModels/MainWindowViewModel.cs": {
+    "mtime": 1789422495.362984,
+    "seen": 1789422537.6978226,
+    "ast_hash": "94fc5b76b3c95c08c52ec20cc4207489",
+    "semantic_hash": ""
+  },
+  "BadgeForge.App/ViewModels/ViewModelBase.cs": {
+    "mtime": 1789417594.511355,
+    "seen": 1789417816.264573,
+    "ast_hash": "0702443651b7d55e3fa82ff717181055",
+    "semantic_hash": "0702443651b7d55e3fa82ff717181055"
+  },
+  "BadgeForge.Tests/MainWindowViewModelTests.cs": {
+    "mtime": 1789421742.9291775,
+    "seen": 1789421772.5332603,
+    "ast_hash": "fa3984fb9aca9fe4fcefee265c5021fd",
+    "semantic_hash": ""
+  },
+  "BadgeForge.App/Converters/LayerIconConverter.cs": {
+    "mtime": 1789419051.110263,
+    "seen": 1789419283.6254134,
+    "ast_hash": "0defb398f2e3d819a7ec155ae25420a5",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify-workflow.md": {
+    "mtime": 1789413485.4278612,
+    "seen": 1789419283.6255078,
+    "ast_hash": "d7672b3adcd808532eccb4979aeb58b5",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1789413497.33026,
+    "seen": 1789419283.625509,
+    "ast_hash": "cab615fe981b3585f20a23cf1cf7e92c",
+    "semantic_hash": ""
+  },
+  "BadgeForge-Project.md": {
+    "mtime": 1789411492.7979414,
+    "seen": 1789419283.6255102,
+    "ast_hash": "7e8cafa7b6cc45dd035c1a9831ba1914",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Tests/GoldenData/cr80_security_badge_golden.png": {
+    "mtime": 1789421350.3733757,
+    "seen": 1789421386.3796117,
+    "ast_hash": "7946c7bb946f094dd239bddbd918d7c9",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Rendering/Elements/ImageDrawing.cs": {
+    "mtime": 1789421297.3368104,
+    "seen": 1789421386.3795574,
+    "ast_hash": "f40387acafcbcbebddaeab19f93a09be",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Rendering/Elements/ImageLayout.cs": {
+    "mtime": 1789420624.2406626,
+    "seen": 1789421386.3795586,
+    "ast_hash": "132ebb60e9b51da55bc22e3c0232d17b",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Rendering/Elements/ImageSourceLoader.cs": {
+    "mtime": 1789420672.5688813,
+    "seen": 1789421386.3795598,
+    "ast_hash": "52ac4f0837295e5bc33e0febcbd396d1",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Templates/Layers/IImageLayer.cs": {
+    "mtime": 1789420532.0063062,
+    "seen": 1789421386.379573,
+    "ast_hash": "f16e0dc69250f6ef9958b20e623ff345",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Core.Templates/Models/ImageAdjustments.cs": {
+    "mtime": 1789420532.0053062,
+    "seen": 1789421386.379582,
+    "ast_hash": "1d960d41deea5d68d19a15733056f54b",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Tests/ImageAdjustmentTests.cs": {
+    "mtime": 1789421242.9841716,
+    "seen": 1789421386.3795984,
+    "ast_hash": "677ab78a1a18278059802bb5accbd0c8",
+    "semantic_hash": ""
+  },
+  "BadgeForge.App/Controls/LayerSnapper.cs": {
+    "mtime": 1789422471.0804894,
+    "seen": 1789422537.6978114,
+    "ast_hash": "05f42b7ed0c62757e673f0fdc5df8daf",
+    "semantic_hash": ""
+  },
+  "BadgeForge.Tests/LayerSnapperTests.cs": {
+    "mtime": 1789422505.264917,
+    "seen": 1789422537.6979117,
+    "ast_hash": "32d6a26acd8eecf8c42506c09ea19ce8",
+    "semantic_hash": ""
+  }
+}
