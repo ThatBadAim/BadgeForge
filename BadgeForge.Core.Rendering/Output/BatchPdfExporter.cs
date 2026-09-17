@@ -40,11 +40,11 @@ public sealed class BatchPdfExporter
         string tempPath = Path.Combine(Path.GetDirectoryName(fullPath)!, $".{Path.GetFileName(fullPath)}.{Guid.NewGuid():N}.tmp");
         var warnings = new List<string>();
 
+        int pages = 0;
         try
         {
             await using (var file = new FileStream(tempPath, FileMode.CreateNew, FileAccess.Write, FileShare.None, 1 << 16, useAsync: true))
             {
-                int pages;
                 using (var writer = new PdfCardDocumentWriter(file, template.TargetFormat, template.Name))
                 {
                     await foreach (var card in _renderService.RenderAsync(template, jobs, options, progress, ct).ConfigureAwait(false))
@@ -62,10 +62,11 @@ public sealed class BatchPdfExporter
                 }
 
                 await file.FlushAsync(ct).ConfigureAwait(false);
-                ct.ThrowIfCancellationRequested();
-                File.Move(tempPath, fullPath, overwrite: true);
-                return new BatchExportResult(fullPath, pages, warnings);
             }
+
+            ct.ThrowIfCancellationRequested();
+            File.Move(tempPath, fullPath, overwrite: true);
+            return new BatchExportResult(fullPath, pages, warnings);
         }
         finally
         {

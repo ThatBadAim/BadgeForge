@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -42,6 +43,9 @@ public class InteractiveBadgeCanvas : Control
 
     public static readonly StyledProperty<CardFormat> FormatProperty =
         AvaloniaProperty.Register<InteractiveBadgeCanvas, CardFormat>(nameof(Format), CardFormat.CR80);
+
+    private static readonly ConcurrentDictionary<StandardCursorType, Cursor> CursorCache = new();
+    private static Cursor GetCursor(StandardCursorType type) => CursorCache.GetOrAdd(type, static t => new Cursor(t));
 
     public static readonly StyledProperty<double> ZoomProperty =
         AvaloniaProperty.Register<InteractiveBadgeCanvas, double>(nameof(Zoom), 1.0);
@@ -946,7 +950,7 @@ public class InteractiveBadgeCanvas : Control
             // Repainted on every move: the cross-hair and its swatch follow the pointer
             _pickedColor = SampleCardColor(pos);
             _pickedPoint = pos;
-            Cursor = new Cursor(StandardCursorType.Cross);
+            Cursor = GetCursor(StandardCursorType.Cross);
             InvalidateVisual();
             return;
         }
@@ -1580,7 +1584,7 @@ public class InteractiveBadgeCanvas : Control
             }
         }
 
-        Cursor = new Cursor(cursor);
+        Cursor = GetCursor(cursor);
     }
 
     private static string? HitTestHandles(Rect r, Point p)

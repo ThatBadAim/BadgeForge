@@ -893,12 +893,15 @@ public partial class MainWindow : Window
 
     private async void OnClearPeopleClick(object? sender, RoutedEventArgs e)
     {
-        if (await ShowDialogAsync("Clear the print list?",
-                "Everyone on the print list will be removed. This can't be undone.",
-                "Remove everyone", "Cancel"))
+        await RunSafelyAsync("clear the print list", async () =>
         {
-            ViewModel.ClearPeople();
-        }
+            if (await ShowDialogAsync("Clear the print list?",
+                    "Everyone on the print list will be removed. This can't be undone.",
+                    "Remove everyone", "Cancel"))
+            {
+                ViewModel.ClearPeople();
+            }
+        });
     }
 
     private async void OnPersonPhotoClick(object? sender, RoutedEventArgs e)

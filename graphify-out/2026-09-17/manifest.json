@@ -12,10 +12,10 @@
     "semantic_hash": "5677bdd47a6af20e94b96a0bb0ac1dc4"
   },
   "BadgeForge.App/MainWindow.axaml.cs": {
-    "mtime": 1789559550.9471304,
-    "seen": 1789660598.2359178,
-    "ast_hash": "3cd2b5dc7eb3f5b0023a96474be128dd",
-    "semantic_hash": "3cd2b5dc7eb3f5b0023a96474be128dd"
+    "mtime": 1789673382.758595,
+    "seen": 1789673446.0134459,
+    "ast_hash": "d8b3a6c9bbb66a6ac4a7385798039e27",
+    "semantic_hash": "d8b3a6c9bbb66a6ac4a7385798039e27"
   },
   "BadgeForge.App/Program.cs": {
     "mtime": 1789412153.591422,
@@ -54,10 +54,10 @@
     "semantic_hash": "a18940e2e7dd16a115b24047c8e21d40"
   },
   "BadgeForge.Core.Data/Services/PhotoMatchingService.cs": {
-    "mtime": 1789501763.7657647,
-    "seen": 1789504543.5009096,
-    "ast_hash": "ed2abfd88bfdd63480a07b88699e9aa4",
-    "semantic_hash": "ed2abfd88bfdd63480a07b88699e9aa4"
+    "mtime": 1789673360.9913027,
+    "seen": 1789673446.0137424,
+    "ast_hash": "0af3f9a08d1f61d923e677b41251eca3",
+    "semantic_hash": "0af3f9a08d1f61d923e677b41251eca3"
   },
   "BadgeForge.Core.Data/Validation/BarcodeValidator.cs": {
     "mtime": 1789452581.0886898,
@@ -84,10 +84,10 @@
     "semantic_hash": "d80e416424fc5ac8b2efbd967dc0a801"
   },
   "BadgeForge.Core.Data/Validation/PreFlightValidationService.cs": {
-    "mtime": 1789504460.665169,
-    "seen": 1789504543.500976,
-    "ast_hash": "ba13ee1a2d65e5c912b90173f410f293",
-    "semantic_hash": "ba13ee1a2d65e5c912b90173f410f293"
+    "mtime": 1789673376.568512,
+    "seen": 1789673446.0138655,
+    "ast_hash": "6658b5c46d73e8b75620942cdea07b53",
+    "semantic_hash": "6658b5c46d73e8b75620942cdea07b53"
   },
   "BadgeForge.Core.Data/Validation/ValidationIssue.cs": {
     "mtime": 1789414554.9887242,
@@ -444,16 +444,16 @@
     "semantic_hash": "05c75400a55a95e251fec72f605bc613"
   },
   "BadgeForge.App/Controls/InteractiveBadgeCanvas.cs": {
-    "mtime": 1789559858.414614,
-    "seen": 1789660598.235807,
-    "ast_hash": "31672fd4d27ff8e151ce1c8ee1a3563f",
-    "semantic_hash": "31672fd4d27ff8e151ce1c8ee1a3563f"
+    "mtime": 1789673344.9190872,
+    "seen": 1789673446.0133724,
+    "ast_hash": "9e11f260e6e78e5e858b056c4b00f12b",
+    "semantic_hash": "9e11f260e6e78e5e858b056c4b00f12b"
   },
   "BadgeForge.App/ViewModels/MainWindowViewModel.cs": {
-    "mtime": 1789559870.199518,
-    "seen": 1789660598.2360277,
-    "ast_hash": "00cfac352245d767a596a34409d49697",
-    "semantic_hash": "00cfac352245d767a596a34409d49697"
+    "mtime": 1789673366.6613789,
+    "seen": 1789673446.0135403,
+    "ast_hash": "f4637d309bf39b415b6f8d20b68c9099",
+    "semantic_hash": "f4637d309bf39b415b6f8d20b68c9099"
   },
   "BadgeForge.App/ViewModels/ViewModelBase.cs": {
     "mtime": 1789417594.511355,
@@ -714,10 +714,10 @@
     "semantic_hash": "a9ede2ef6fd79a2ce28d18e90c9fd57a"
   },
   "BadgeForge.Core.Rendering/Output/BatchPdfExporter.cs": {
-    "mtime": 1789502346.5172515,
-    "seen": 1789504543.5014408,
-    "ast_hash": "8609ad034a7aab7c6fdf65f8cb0f625a",
-    "semantic_hash": "8609ad034a7aab7c6fdf65f8cb0f625a"
+    "mtime": 1789673331.1569023,
+    "seen": 1789673446.014488,
+    "ast_hash": "410ee7a3523d713bae796dbbdbf882b9",
+    "semantic_hash": "410ee7a3523d713bae796dbbdbf882b9"
   },
   "BadgeForge.Core.Rendering/Output/PdfCardDocumentWriter.cs": {
     "mtime": 1789502346.516915,
@@ -792,10 +792,10 @@
     "semantic_hash": "891fcd52550f94c7c1c0d01d31d099ea"
   },
   "publish-windows.sh": {
-    "mtime": 1789661084.039617,
-    "seen": 1789661225.5276122,
-    "ast_hash": "26e90fc013b55a248e8e1b4d24fad411",
-    "semantic_hash": "26e90fc013b55a248e8e1b4d24fad411"
+    "mtime": 1789661939.9674735,
+    "seen": 1789662065.8557174,
+    "ast_hash": "57cec0ce23f504294f9ddc7d2dd18a0a",
+    "semantic_hash": "57cec0ce23f504294f9ddc7d2dd18a0a"
   },
   "BadgeForge.App/ViewModels/ImportSummaryViewModel.cs": {
     "mtime": 1789550988.6638286,
@@ -916,5 +916,17 @@
     "seen": 1789661225.5270076,
     "ast_hash": "22073778b9bc828ba782972ad2c975d6",
     "semantic_hash": "22073778b9bc828ba782972ad2c975d6"
+  },
+  "Make EXEs": {
+    "mtime": 1789661950.3919811,
+    "seen": 1789662065.8557158,
+    "ast_hash": "86481eac1e91bc76e6ff362e0de945c8",
+    "semantic_hash": "86481eac1e91bc76e6ff362e0de945c8"
+  },
+  "BadgeForge.Tests/PhotoMatchingServiceTests.cs": {
+    "mtime": 1789673396.2927766,
+    "seen": 1789673446.0151956,
+    "ast_hash": "55f433a54483de6f3b6d8efaf5a4e37e",
+    "semantic_hash": "55f433a54483de6f3b6d8efaf5a4e37e"
   }
 }

@@ -2757,6 +2757,7 @@ public partial class MainWindowViewModel : ViewModelBase
         return await Task.Run(() =>
         {
             int matched = 0;
+            var directoryIndex = _photoService.BuildDirectoryIndex(options.PhotoDirectory);
             foreach (var rec in records)
             {
                 if (chosenByHand.Contains(rec) || (onlyMissing && !string.IsNullOrEmpty(rec.ResolvedPhotoPath)))
@@ -2764,7 +2765,7 @@ public partial class MainWindowViewModel : ViewModelBase
                     continue;
                 }
 
-                var path = _photoService.ResolvePhotoPath(rec, options);
+                var path = _photoService.ResolvePhotoPath(rec, options, directoryIndex);
                 if (path != null)
                 {
                     rec.ResolvedPhotoPath = path;

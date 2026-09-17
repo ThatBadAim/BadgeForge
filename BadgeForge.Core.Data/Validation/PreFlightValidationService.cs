@@ -56,6 +56,12 @@ public class PreFlightValidationService
             primaryKeyToken = barcodeLayers[0].GetReferencedTokens().FirstOrDefault();
         }
 
+        IReadOnlyDictionary<string, string>? photoDirectoryIndex = null;
+        if (photoLayers.Count > 0 && !string.IsNullOrWhiteSpace(effectivePhotoOptions.PhotoDirectory))
+        {
+            photoDirectoryIndex = _photoMatchingService.BuildDirectoryIndex(effectivePhotoOptions.PhotoDirectory);
+        }
+
         for (int i = 0; i < records.Count; i++)
         {
             var record = records[i];
@@ -76,7 +82,7 @@ public class PreFlightValidationService
             // 3. Photo Layers validation (required tokens, physical file existence)
             foreach (var photoLayer in photoLayers)
             {
-                ValidatePhotoLayer(record, recordId, photoLayer, effectivePhotoOptions, issues, options);
+                ValidatePhotoLayer(record, recordId, photoLayer, effectivePhotoOptions, photoDirectoryIndex, issues, options);
             }
 
             // 4. Primary key duplicate check (if primaryKeyToken is specified or inferred)
@@ -283,6 +289,7 @@ public class PreFlightValidationService
         string recordId,
         PhotoLayer layer,
         PhotoMatchingOptions photoOptions,
+        IReadOnlyDictionary<string, string>? photoDirectoryIndex,
         List<ValidationIssue> issues,
         PreFlightValidationOptions validationOptions)
     {
@@ -333,7 +340,7 @@ public class PreFlightValidationService
         // record: it must never change which photo the badge prints with.
         var resolvedPath = !string.IsNullOrWhiteSpace(record.ResolvedPhotoPath) && File.Exists(record.ResolvedPhotoPath)
             ? record.ResolvedPhotoPath
-            : _photoMatchingService.ResolvePhotoPath(record, photoOptions);
+            : _photoMatchingService.ResolvePhotoPath(record, photoOptions, photoDirectoryIndex);
 
         bool fileExists = !string.IsNullOrWhiteSpace(resolvedPath) && File.Exists(resolvedPath);
 
