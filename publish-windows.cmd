@@ -1,8 +1,8 @@
 @echo off
 rem
 rem Builds the Windows executables:
-rem  1. BadgeForge-Portable.exe (BadgeForge.exe) - portable single-file, run directly without installing
-rem  2. BadgeForge-Setup.exe - self-extracting installer that creates Start Menu/Desktop shortcuts
+rem  1. portable.exe (BadgeForge.exe) - run directly without installing
+rem  2. installer.exe (BadgeForge-Setup.exe) - installs onto the machine with shortcuts
 rem
 rem Usage:  publish-windows.cmd [runtime-identifier]    (default: win-x64; use win-arm64 for an ARM PC)
 rem
@@ -22,6 +22,7 @@ if errorlevel 1 exit /b 1
 
 move /y "%OUTPUT%\BadgeForge.App.exe" "%OUTPUT%\BadgeForge.exe" >nul
 copy /y "%OUTPUT%\BadgeForge.exe" "%OUTPUT%\BadgeForge-Portable.exe" >nul
+copy /y "%OUTPUT%\BadgeForge.exe" "%OUTPUT%\portable.exe" >nul
 
 echo ==^> 2/2 Publishing setup installer...
 set "INSTALLER_TEMP=%ROOT%BadgeForge.Installer\bin\installer-publish"
@@ -30,13 +31,15 @@ dotnet publish "%ROOT%BadgeForge.Installer\BadgeForge.Installer.csproj" --config
 if errorlevel 1 exit /b 1
 
 move /y "%INSTALLER_TEMP%\BadgeForge.Installer.exe" "%OUTPUT%\BadgeForge-Setup.exe" >nul
+copy /y "%OUTPUT%\BadgeForge-Setup.exe" "%OUTPUT%\installer.exe" >nul
 if exist "%INSTALLER_TEMP%" rmdir /s /q "%INSTALLER_TEMP%"
 
 echo.
 echo =========================================================
-echo  Portable Run-Direct Exe:  %OUTPUT%\BadgeForge-Portable.exe
-echo                            (%OUTPUT%\BadgeForge.exe)
-echo  Setup Installer Exe:      %OUTPUT%\BadgeForge-Setup.exe
+echo  Portable Exe (Run Direct):  %OUTPUT%\portable.exe
+echo                              (%OUTPUT%\BadgeForge.exe)
+echo  Installer Exe (Install):    %OUTPUT%\installer.exe
+echo                              (%OUTPUT%\BadgeForge-Setup.exe)
 echo =========================================================
 echo.
 

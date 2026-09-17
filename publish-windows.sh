@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
 # Builds the Windows executables:
-#  1. BadgeForge-Portable.exe (or BadgeForge.exe) - portable single-file, run directly without installing
-#  2. BadgeForge-Setup.exe - self-extracting installer that creates Start Menu/Desktop shortcuts & Add/Remove Programs
+#  1. portable.exe (and BadgeForge-Portable.exe / BadgeForge.exe) - runs directly without installing
+#  2. installer.exe (and BadgeForge-Setup.exe) - installs to machine, adds Start Menu/Desktop shortcuts
 #
 # Usage:  ./publish-windows.sh [runtime-identifier]     (default: win-x64; use win-arm64 for an ARM PC)
 #
@@ -28,6 +28,7 @@ dotnet publish "$ROOT/BadgeForge.App/BadgeForge.App.csproj" \
 
 mv "$OUTPUT/BadgeForge.App.exe" "$OUTPUT/BadgeForge.exe"
 cp "$OUTPUT/BadgeForge.exe" "$OUTPUT/BadgeForge-Portable.exe"
+cp "$OUTPUT/BadgeForge.exe" "$OUTPUT/portable.exe"
 
 echo "==> 2/2 Publishing setup installer..."
 INSTALLER_TEMP="$ROOT/BadgeForge.Installer/bin/installer-publish"
@@ -39,14 +40,16 @@ dotnet publish "$ROOT/BadgeForge.Installer/BadgeForge.Installer.csproj" \
     --nologo
 
 mv "$INSTALLER_TEMP/BadgeForge.Installer.exe" "$OUTPUT/BadgeForge-Setup.exe"
+cp "$OUTPUT/BadgeForge-Setup.exe" "$OUTPUT/installer.exe"
 rm -rf "$INSTALLER_TEMP"
 
 echo
 echo "========================================================="
-echo " Portable Run-Direct Exe:  $OUTPUT/BadgeForge-Portable.exe  ($(du -h "$OUTPUT/BadgeForge-Portable.exe" | cut -f1))"
-echo "                           ($OUTPUT/BadgeForge.exe)"
-echo " Setup Installer Exe:      $OUTPUT/BadgeForge-Setup.exe     ($(du -h "$OUTPUT/BadgeForge-Setup.exe" | cut -f1))"
+echo " Portable Exe (Run Direct):  $OUTPUT/portable.exe  ($(du -h "$OUTPUT/portable.exe" | cut -f1))"
+echo "                             ($OUTPUT/BadgeForge.exe)"
+echo " Installer Exe (Install):    $OUTPUT/installer.exe ($(du -h "$OUTPUT/installer.exe" | cut -f1))"
+echo "                             ($OUTPUT/BadgeForge-Setup.exe)"
 echo "========================================================="
-echo "• Portable: Double-click to run immediately with no installation."
-echo "• Setup:    Installs to AppData, creates Desktop/Start Menu shortcuts, and registers in Windows Settings."
+echo "• portable.exe:   Double-click to use the app immediately without installing."
+echo "• installer.exe:  Installs to the machine with Start Menu & Desktop shortcuts."
 echo

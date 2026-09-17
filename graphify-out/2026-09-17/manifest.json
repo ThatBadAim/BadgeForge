@@ -324,10 +324,10 @@
     "semantic_hash": "4febc979f01c16c777fc64393a74912c"
   },
   "BadgeForge.sln": {
-    "mtime": 1789503648.381838,
-    "seen": 1789504543.501898,
-    "ast_hash": "c3f2e8ca028fd5a01b205431b650fb69",
-    "semantic_hash": "c3f2e8ca028fd5a01b205431b650fb69"
+    "mtime": 1789661077.6553648,
+    "seen": 1789661225.5275967,
+    "ast_hash": "8caf7cef8257ab7e35b7512b2a93c873",
+    "semantic_hash": "8caf7cef8257ab7e35b7512b2a93c873"
   },
   "BadgeForge.slnx": {
     "mtime": 1789503648.4014165,
@@ -792,10 +792,10 @@
     "semantic_hash": "891fcd52550f94c7c1c0d01d31d099ea"
   },
   "publish-windows.sh": {
-    "mtime": 1789545895.8547237,
-    "seen": 1789660598.2387216,
-    "ast_hash": "f365eda7ebd07f9bb58a41a96a576fe5",
-    "semantic_hash": "f365eda7ebd07f9bb58a41a96a576fe5"
+    "mtime": 1789661084.039617,
+    "seen": 1789661225.5276122,
+    "ast_hash": "26e90fc013b55a248e8e1b4d24fad411",
+    "semantic_hash": "26e90fc013b55a248e8e1b4d24fad411"
   },
   "BadgeForge.App/ViewModels/ImportSummaryViewModel.cs": {
     "mtime": 1789550988.6638286,
@@ -904,5 +904,17 @@
     "seen": 1789660598.2386804,
     "ast_hash": "eb8d4750bf2ca3860b1e8d7999e24f5d",
     "semantic_hash": "eb8d4750bf2ca3860b1e8d7999e24f5d"
+  },
+  "BadgeForge.Installer/BadgeForge.Installer.csproj": {
+    "mtime": 1789661045.6683297,
+    "seen": 1789661225.5270057,
+    "ast_hash": "c1be9c6b0ca24f9c78122666f857b280",
+    "semantic_hash": "c1be9c6b0ca24f9c78122666f857b280"
+  },
+  "BadgeForge.Installer/Program.cs": {
+    "mtime": 1789661064.7338982,
+    "seen": 1789661225.5270076,
+    "ast_hash": "22073778b9bc828ba782972ad2c975d6",
+    "semantic_hash": "22073778b9bc828ba782972ad2c975d6"
   }
 }

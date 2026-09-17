@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# "Make EXEs"
+# Builds both:
+#  - installer.exe: installs onto the machine with Start Menu and Desktop shortcuts
+#  - portable.exe: lets you run and use BadgeForge directly without installing
+#
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$DIR/publish-windows.sh" "$@"

@@ -792,10 +792,10 @@
     "semantic_hash": "891fcd52550f94c7c1c0d01d31d099ea"
   },
   "publish-windows.sh": {
-    "mtime": 1789661084.039617,
-    "seen": 1789661225.5276122,
-    "ast_hash": "26e90fc013b55a248e8e1b4d24fad411",
-    "semantic_hash": "26e90fc013b55a248e8e1b4d24fad411"
+    "mtime": 1789661939.9674735,
+    "seen": 1789662065.8557174,
+    "ast_hash": "57cec0ce23f504294f9ddc7d2dd18a0a",
+    "semantic_hash": "57cec0ce23f504294f9ddc7d2dd18a0a"
   },
   "BadgeForge.App/ViewModels/ImportSummaryViewModel.cs": {
     "mtime": 1789550988.6638286,
@@ -916,5 +916,11 @@
     "seen": 1789661225.5270076,
     "ast_hash": "22073778b9bc828ba782972ad2c975d6",
     "semantic_hash": "22073778b9bc828ba782972ad2c975d6"
+  },
+  "Make EXEs": {
+    "mtime": 1789661950.3919811,
+    "seen": 1789662065.8557158,
+    "ast_hash": "86481eac1e91bc76e6ff362e0de945c8",
+    "semantic_hash": "86481eac1e91bc76e6ff362e0de945c8"
   }
 }
