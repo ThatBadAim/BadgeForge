@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgeForge.Tests", "BadgeFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgeForge.UiTests", "BadgeForge.UiTests\BadgeForge.UiTests.csproj", "{EC82AA13-C142-4DDD-BFCA-DC58B6ABFAFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgeForge.Installer", "BadgeForge.Installer\BadgeForge.Installer.csproj", "{34CF6BFA-5819-4960-88BE-F0127C3F2851}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{EC82AA13-C142-4DDD-BFCA-DC58B6ABFAFF}.Release|x64.Build.0 = Release|Any CPU
 		{EC82AA13-C142-4DDD-BFCA-DC58B6ABFAFF}.Release|x86.ActiveCfg = Release|Any CPU
 		{EC82AA13-C142-4DDD-BFCA-DC58B6ABFAFF}.Release|x86.Build.0 = Release|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Debug|x64.Build.0 = Debug|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Debug|x86.Build.0 = Debug|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Release|x64.ActiveCfg = Release|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Release|x64.Build.0 = Release|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Release|x86.ActiveCfg = Release|Any CPU
+		{34CF6BFA-5819-4960-88BE-F0127C3F2851}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>..\BadgeForge.App\Assets\app-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>BadgeForge Installer</Product>
+    <AssemblyTitle>BadgeForge Setup</AssemblyTitle>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(RuntimeIdentifier.StartsWith('win'))">
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+
+  <!-- Embed payload exe if present at publish/win-x64/BadgeForge.exe -->
+  <ItemGroup Condition="Exists('..\publish\win-x64\BadgeForge.exe')">
+    <EmbeddedResource Include="..\publish\win-x64\BadgeForge.exe" LogicalName="Payload.BadgeForge.exe" />
+  </ItemGroup>
+</Project>

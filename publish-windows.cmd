@@ -1,10 +1,8 @@
 @echo off
 rem
-rem Builds the portable Windows exe, from Windows.
-rem
-rem The result is one self-contained BadgeForge.exe: the .NET runtime, Avalonia and SkiaSharp's native libraries are
-rem all packed inside it, so the printer PC needs no .NET install, no internet access and no installer. Copy the exe
-rem across and run it.
+rem Builds the Windows executables:
+rem  1. BadgeForge-Portable.exe (BadgeForge.exe) - portable single-file, run directly without installing
+rem  2. BadgeForge-Setup.exe - self-extracting installer that creates Start Menu/Desktop shortcuts
 rem
 rem Usage:  publish-windows.cmd [runtime-identifier]    (default: win-x64; use win-arm64 for an ARM PC)
 rem
@@ -18,18 +16,28 @@ set "OUTPUT=%ROOT%publish\%RID%"
 
 if exist "%OUTPUT%" rmdir /s /q "%OUTPUT%"
 
+echo ==^> 1/2 Publishing portable standalone application...
 dotnet publish "%ROOT%BadgeForge.App\BadgeForge.App.csproj" --configuration Release --runtime "%RID%" --output "%OUTPUT%" --nologo
 if errorlevel 1 exit /b 1
 
-rem A single-file exe carries its own bundle, so renaming it is safe and BadgeForge.exe is what an operator expects
 move /y "%OUTPUT%\BadgeForge.App.exe" "%OUTPUT%\BadgeForge.exe" >nul
+copy /y "%OUTPUT%\BadgeForge.exe" "%OUTPUT%\BadgeForge-Portable.exe" >nul
+
+echo ==^> 2/2 Publishing setup installer...
+set "INSTALLER_TEMP=%ROOT%BadgeForge.Installer\bin\installer-publish"
+if exist "%INSTALLER_TEMP%" rmdir /s /q "%INSTALLER_TEMP%"
+dotnet publish "%ROOT%BadgeForge.Installer\BadgeForge.Installer.csproj" --configuration Release --runtime "%RID%" --output "%INSTALLER_TEMP%" --nologo
+if errorlevel 1 exit /b 1
+
+move /y "%INSTALLER_TEMP%\BadgeForge.Installer.exe" "%OUTPUT%\BadgeForge-Setup.exe" >nul
+if exist "%INSTALLER_TEMP%" rmdir /s /q "%INSTALLER_TEMP%"
 
 echo.
-echo Portable exe: %OUTPUT%\BadgeForge.exe
-echo Copy that one file to the Windows PC and double-click it. Nothing else is needed.
+echo =========================================================
+echo  Portable Run-Direct Exe:  %OUTPUT%\BadgeForge-Portable.exe
+echo                            (%OUTPUT%\BadgeForge.exe)
+echo  Setup Installer Exe:      %OUTPUT%\BadgeForge-Setup.exe
+echo =========================================================
 echo.
-echo First run on a PC it was copied to: Windows SmartScreen may warn that the publisher is unknown, because the
-echo exe is not code-signed. Choose "More info" then "Run anyway". If it came over a network share or download,
-echo right-click it first, choose Properties, and tick Unblock.
 
 endlocal
