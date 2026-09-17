@@ -13,6 +13,7 @@
         x:Class="BadgeForge.App.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="BadgeForge"
+        Icon="/Assets/app-icon.ico"
         Background="{StaticResource BrushNeutralBase}">
 
     <Window.Resources>

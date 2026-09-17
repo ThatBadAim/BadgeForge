@@ -10,6 +10,7 @@
         SizeToContent="Height" CanResize="False" ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
         Title="Import roster"
+        Icon="/Assets/app-icon.ico"
         Background="{StaticResource BrushNeutralBase}">
 
     <Window.Styles>

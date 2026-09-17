@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
@@ -11,6 +11,7 @@
     <Product>BadgeForge</Product>
     <AssemblyTitle>BadgeForge Card Designer and Batch Printer</AssemblyTitle>
     <Version>1.0.0</Version>
+    <ApplicationIcon>Assets\app-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <!--
@@ -59,6 +60,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Assets including application icons -->
+    <AvaloniaResource Include="Assets\**" />
     <!-- The renderer's bundled fonts, so the in-place text editor draws with exactly the font the badge prints in -->
     <AvaloniaResource Include="..\BadgeForge.Core.Rendering\Assets\Fonts\*.ttf" Link="Assets\Fonts\%(Filename)%(Extension)" />
   </ItemGroup>
